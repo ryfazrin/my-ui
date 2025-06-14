@@ -4,7 +4,7 @@ import { setupCounter } from '../lib/main'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="container">
-    <h1>OneUI Button Examples</h1>
+    <h1>OneUI 7 Button Examples</h1>
     
     <!-- Light Mode Section -->
     <div class="section">

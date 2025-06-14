@@ -11,8 +11,8 @@ $button-font-weight: 500;
 $button-dark: $background-dark;
 $button-light: $container-background-light;
 $button-primary: $accent-light;
-$button-gradient-start: $accent-light;
-$button-gradient-end: adjust-hue($accent-light, 45deg);
+$button-gradient-start: $gradient-start;
+$button-gradient-end: $gradient-end;
 
 // Base button styles
 .button {
@@ -68,7 +68,7 @@ $button-gradient-end: adjust-hue($accent-light, 45deg);
   }
 
   &--gradient {
-    background: linear-gradient(90deg, $button-gradient-start 0%, $button-gradient-end 100%);
+    background: linear-gradient(95deg, $button-gradient-start 0%, $button-gradient-end 100%);
     color: $container-background-light;
     
     &:hover {
