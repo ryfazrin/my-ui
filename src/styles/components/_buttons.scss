@@ -85,14 +85,13 @@ $button-gradient-end: adjust-hue($accent-light, 45deg);
       color: $primary-light;
       
       &:hover {
-        background-color: rgba($button-light, 1);
+        background-color: $foreground-light;
       }
     }
 
     &--dark {
       background-color: $container-background-dark;
       color: $primary-dark;
-      border: 1px solid rgba($primary-dark, 0.1);
       
       &:hover {
         background-color: lighten($container-background-dark, 5%);
