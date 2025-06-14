@@ -1,0 +1,103 @@
+@import "../_design-tokens.scss";
+
+// Button-specific tokens
+$button-height: 56px;
+$button-padding: 0 24px;
+$button-border-radius: 28px;
+$button-font-size: 16px;
+$button-font-weight: 500;
+
+// Map design tokens to button variants
+$button-dark: $background-dark;
+$button-light: $container-background-light;
+$button-primary: $accent-light;
+$button-gradient-start: $accent-light;
+$button-gradient-end: adjust-hue($accent-light, 45deg);
+
+// Base button styles
+.button {
+  height: $button-height;
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  // Icon styles
+  .button-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Button variants
+  &--dark {
+    background-color: $button-dark;
+    color: $primary-dark;
+    
+    &:hover {
+      background-color: $container-background-dark;
+    }
+  }
+
+  &--light {
+    background-color: $button-light;
+    color: $primary-light;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      background-color: $foreground-light;
+    }
+  }
+
+  &--primary {
+    background-color: $accent-light;
+    color: $container-background-light;
+    
+    &:hover {
+      background-color: darken($accent-light, 5%);
+    }
+  }
+
+  &--gradient {
+    background: linear-gradient(90deg, $button-gradient-start 0%, $button-gradient-end 100%);
+    color: $container-background-light;
+    
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+}
+
+// Dark Mode styles for buttons
+.dark-mode {
+  .button {
+    &--light {
+      background-color: $button-light;
+      color: $primary-light;
+      
+      &:hover {
+        background-color: rgba($button-light, 1);
+      }
+    }
+
+    &--dark {
+      background-color: $container-background-dark;
+      color: $primary-dark;
+      border: 1px solid rgba($primary-dark, 0.1);
+      
+      &:hover {
+        background-color: lighten($container-background-dark, 5%);
+        border-color: rgba($primary-dark, 0.2);
+      }
+    }
+  }
+}
