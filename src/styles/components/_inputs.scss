@@ -7,7 +7,45 @@ $input-border-radius: 28px;
 $input-font-size: $body-font-size;
 $input-icon-size: 24px;
 
+// Label tokens
+$label-margin: 8px;
+$label-font-size: 14px;
+$label-font-weight: 500;
+
 // Base input styles
+// Form group container
+.form-group {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+// Label styles
+.input-label {
+  display: block;
+  margin-bottom: $label-margin;
+  font-size: $label-font-size;
+  font-weight: $label-font-weight;
+  transition: all 0.2s ease-in-out;
+  color: $secondary-light;
+
+  &.is-required::after {
+    content: "*";
+    color: #FF3B30;
+    margin-left: 4px;
+  }
+
+  &.has-error {
+    color: #FF3B30;
+  }
+}
+
+// Dark mode label adjustments
+.dark-mode {
+  .input-label {
+    color: $secondary-dark;
+  }
+}
+
 .input-field {
   position: relative;
   width: 100%;
@@ -47,8 +85,34 @@ $input-icon-size: 24px;
     color: inherit;
   }
 
+  // Required state
+  &.is-required &__label::after {
+    content: "*";
+    color: #FF3B30;
+    margin-left: 4px;
+  }
+
+  // Error state
+  &.has-error {
+    .input-field__label {
+      color: #FF3B30;
+    }
+    
+    .input-field__input {
+      border: 1px solid #FF3B30;
+      
+      &:focus {
+        border-color: #FF3B30;
+      }
+    }
+  }
+
   // Variants
   &--dark {
+    .input-field__label {
+      color: $secondary-dark;
+    }
+    
     .input-field__input {
       background-color: $background-dark;
       color: $primary-dark;
