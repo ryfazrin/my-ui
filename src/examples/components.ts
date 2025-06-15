@@ -1,5 +1,6 @@
 import { renderButtonExamples } from './buttons'
 import { renderInputExamples } from './inputs'
+import { renderSwitchExamples } from './switches'
 
 export function renderComponentExamples(container: HTMLElement) {
   // Create main container
@@ -8,6 +9,7 @@ export function renderComponentExamples(container: HTMLElement) {
   mainContainer.innerHTML = '<h1>OneUI 7 Components</h1>'
   
   // Render
+  renderSwitchExamples(mainContainer)
   renderInputExamples(mainContainer)
   renderButtonExamples(mainContainer)
   
@@ -42,6 +44,13 @@ export function renderComponentExamples(container: HTMLElement) {
       gap: 1rem;
       margin: 1rem 0;
       max-width: 600px;
+    }
+
+    .switch-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 1rem 0;
     }
   `
   document.head.appendChild(style)

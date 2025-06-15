@@ -1,0 +1,174 @@
+@import "../_design-tokens.scss";
+
+// Switch-specific tokens
+$switch-width: 44px;
+$switch-height: 24px;
+$switch-padding: 3px;
+$switch-border-radius: 12px;
+$switch-thumb-size: 17px;
+$switch-transition: 0.2s ease-in-out;
+
+// Switch Component
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__track {
+    position: relative;
+    display: inline-block;
+    width: $switch-width;
+    height: $switch-height;
+    background-color: rgba($secondary-light, 0.3);
+    border-radius: $switch-border-radius;
+    cursor: pointer;
+    transition: background-color $switch-transition;
+
+    &:hover {
+      background-color: rgba($secondary-light, 0.4);
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    top: $switch-padding;
+    left: $switch-padding;
+    width: $switch-thumb-size;
+    height: $switch-thumb-size;
+    background-color: $container-background-light;
+    border-radius: 50%;
+    transition: all $switch-transition;
+    box-shadow: $elevation-2;
+    
+    &:hover {
+      box-shadow: $elevation-3;
+    }
+  }
+
+  // Label styles
+  &__label {
+    font-size: $body-font-size;
+    font-weight: 500;
+    color: $primary-light;
+    cursor: pointer;
+  }
+
+  &__description {
+    font-size: 14px;
+    color: $secondary-light;
+    margin-top: 4px;
+  }
+
+  // Checked state
+  &__input:checked + &__track {
+    background-color: $accent-light;
+
+    &:hover {
+      background-color: darken($accent-light, 5%);
+    }
+
+    .switch__thumb {
+      transform: translateX(#{$switch-width - $switch-thumb-size - ($switch-padding * 2)});
+      background-color: $container-background-light;
+    }
+  }
+
+  // Disabled state
+  &__input:disabled + &__track {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    .switch__thumb {
+      background-color: $component-light;
+    }
+  }
+
+  // Disabled and checked state
+  &__input:disabled:checked + &__track {
+    background-color: $accent-light;
+    
+    &:hover {
+      background-color: $accent-light;
+    }
+
+    .switch__thumb {
+      background-color: $container-background-light;
+    }
+  }
+
+  &__input:disabled ~ &__label {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Focus state
+  &__input:focus-visible + &__track {
+    outline: 2px solid $accent-light;
+    outline-offset: 2px;
+  }
+
+  // Dark mode
+  .dark-mode & {
+    .switch__track {
+      background-color: rgba($secondary-dark, 0.5);
+
+      &:hover {
+        background-color: rgba($secondary-dark, 0.6);
+      }
+    }
+
+    .switch__thumb {
+      background-color: $container-background-dark;
+    }
+
+    .switch__label {
+      color: $primary-dark;
+    }
+
+    .switch__description {
+      color: $secondary-dark;
+    }
+
+    &__input:checked + .switch__track {
+      background-color: $accent-dark;
+
+      &:hover {
+        background-color: lighten($accent-dark, 5%);
+      }
+
+      .switch__thumb {
+        background-color: $container-background-dark;
+      }
+    }
+
+    &__input:disabled + .switch__track {
+      .switch__thumb {
+        background-color: $component-dark;
+      }
+    }
+
+    &__input:disabled:checked + .switch__track {
+      background-color: $accent-dark;
+      
+      &:hover {
+        background-color: $accent-dark;
+      }
+
+      .switch__thumb {
+        background-color: $container-background-dark;
+      }
+    }
+
+    &__input:focus-visible + .switch__track {
+      outline-color: $accent-dark;
+    }
+  }
+}
