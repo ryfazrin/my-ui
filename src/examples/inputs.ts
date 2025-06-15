@@ -55,7 +55,7 @@ export function renderInputExamples(container: HTMLElement) {
     <section class="section dark-mode">
       <h2>Dark Mode Inputs</h2>
       <div class="input-container">
-        <div class="input-field input-field--dark">
+        <div class="input-field input-field--light">
           <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -65,7 +65,7 @@ export function renderInputExamples(container: HTMLElement) {
           </span>
         </div>
 
-        <div class="input-field input-field--light">
+        <div class="input-field input-field--dark">
           <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
