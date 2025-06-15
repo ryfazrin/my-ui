@@ -1,6 +1,5 @@
 export function renderSwitchExamples(container: HTMLElement) {
 const section = document.createElement('div')
-section.className = 'section'
 section.innerHTML = `
     <section class="section">
       <h2>Switches</h2>
