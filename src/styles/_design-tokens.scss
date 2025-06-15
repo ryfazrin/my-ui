@@ -21,6 +21,29 @@ $accent-dark: #387AFF;
 $gradient-start: #66A1F3;
 $gradient-end: #22C9A6;
 
+// Multi-Stop Gradient Colors
+$gradient-color-1: #364B6F;  // 0%
+$gradient-color-2: #91B0BF;  // 65%
+$gradient-color-3: #CFCFCF;  // 87%
+
+// Alternative Gradient Colors
+$gradient-dark-1: #364B6F;   // Dark blue
+$gradient-dark-2: #384247;   // Dark gray
+$gradient-dark-3: #2D2D30;   // Darker gray
+
+// Linear Gradients
+$gradient-linear-2stops: linear-gradient(90deg, $gradient-start 0%, $gradient-end 100%);
+$gradient-linear-3stops: linear-gradient(90deg, 
+  $gradient-color-1 0%,
+  $gradient-color-2 65%,
+  $gradient-color-3 87%
+);
+$gradient-linear-dark-3stops: linear-gradient(90deg, 
+  $gradient-dark-1 0%,
+  $gradient-dark-2 65%,
+  $gradient-dark-3 87%
+);
+
 // Typography
 $title-font-size: 36px;
 $title-font-weight: 700;

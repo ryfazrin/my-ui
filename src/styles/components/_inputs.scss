@@ -89,7 +89,7 @@ $input-icon-size: 24px;
 
   &--gradient {
     .input-field__input {
-      background: linear-gradient(90deg, $gradient-start 0%, $gradient-end 100%);
+      background: $gradient-linear-dark-3stops;
       color: $container-background-light;
       
       &::placeholder {
@@ -108,11 +108,11 @@ $input-icon-size: 24px;
 
   &--gradient-light {
     .input-field__input {
-      background: linear-gradient(90deg, $gradient-start 0%, $container-background-light 100%);
-      color: $primary-light;
+      background: $gradient-linear-3stops;
+      color: $primary-dark;
       
       &::placeholder {
-        color: rgba($primary-light, 0.6);
+        color: rgba($primary-dark, 0.6);
       }
       
       &:focus {

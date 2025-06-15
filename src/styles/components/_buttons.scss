@@ -68,7 +68,7 @@ $button-gradient-end: $gradient-end;
   }
 
   &--gradient {
-    background: linear-gradient(95deg, $button-gradient-start 0%, $button-gradient-end 100%);
+    background: $gradient-linear-2stops;
     color: $container-background-light;
     
     &:hover {
