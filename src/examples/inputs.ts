@@ -7,7 +7,7 @@ export function renderInputExamples(container: HTMLElement) {
       <div class="input-container">
         <!-- Dark Input -->
         <div class="input-field input-field--dark">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>
@@ -18,7 +18,7 @@ export function renderInputExamples(container: HTMLElement) {
 
         <!-- Light Input -->
         <div class="input-field input-field--light">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>
@@ -29,7 +29,7 @@ export function renderInputExamples(container: HTMLElement) {
 
         <!-- Gradient Input -->
         <div class="input-field input-field--gradient">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>
@@ -40,7 +40,7 @@ export function renderInputExamples(container: HTMLElement) {
 
         <!-- Gradient Light Input -->
         <div class="input-field input-field--gradient-light">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>
@@ -56,7 +56,7 @@ export function renderInputExamples(container: HTMLElement) {
       <h2>Dark Mode Inputs</h2>
       <div class="input-container">
         <div class="input-field input-field--dark">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>
@@ -66,7 +66,7 @@ export function renderInputExamples(container: HTMLElement) {
         </div>
 
         <div class="input-field input-field--light">
-          <input type="search" class="input-field__input" placeholder="What are you looking for?">
+          <input type="text" class="input-field__input" placeholder="What are you looking for?">
           <span class="input-field__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M12 14.5C13.66 14.5 15 13.16 15 11.5C15 9.84 13.66 8.5 12 8.5C10.34 8.5 9 9.84 9 11.5C9 13.16 10.34 14.5 12 14.5Z" fill="currentColor"/>

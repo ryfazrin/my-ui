@@ -7,7 +7,7 @@ export function renderComponentExamples(container: HTMLElement) {
   mainContainer.className = 'container'
   mainContainer.innerHTML = '<h1>OneUI 7 Components</h1>'
   
-  // Render inputs and buttons
+  // Render
   renderInputExamples(mainContainer)
   renderButtonExamples(mainContainer)
   
