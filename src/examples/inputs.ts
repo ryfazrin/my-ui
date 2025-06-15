@@ -1,9 +1,9 @@
 export function renderInputExamples(container: HTMLElement) {
   const inputSection = document.createElement('div')
   inputSection.innerHTML = `
-    <!-- Input Fields Section -->
-    <section class="section">
-      <h2>Light Mode Inputs</h2>
+    <!-- Inputs Dark Mode Section -->
+    <section class="section dark-mode">
+      <h2>Dark Mode Inputs</h2>
       <div class="input-container">
         <!-- Dark Input -->
         <div class="form-group">
@@ -79,9 +79,9 @@ export function renderInputExamples(container: HTMLElement) {
       </div>
     </section>
 
-    <!-- Inputs Dark Mode Section -->
-    <section class="section dark-mode">
-      <h2>Dark Mode Inputs</h2>
+    <!-- Input Fields Section -->
+    <section class="section">
+      <h2>Light Mode Inputs</h2>
       <div class="input-container">
         <!-- Dark Input -->
         <div class="form-group">
