@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderMenuExamples(container: HTMLElement) {
 const section = document.createElement('div')
 section.innerHTML = `
@@ -187,5 +189,25 @@ section.innerHTML = `
   </div>
 </section>
 `
+
+// Add code collapse
+const mainSection = section.querySelector('.section')
+if (mainSection) {
+const codeExample = `<div class="menu-panel">
+  <div class="menu-panel__header">
+    <h3>Internet</h3>
+  </div>
+  <div class="menu-panel__actions-grid">
+    <button class="menu-panel__action-circle">
+      <div class="menu-panel__action-circle-icon">
+        <i class="ph-bold ph-wifi"></i>
+      </div>
+      <span class="menu-panel__action-label">Wi-Fi</span>
+    </button>
+  </div>
+</div>`
+mainSection.appendChild(createCodeCollapse('View Code', codeExample))
+}
+
 container.appendChild(section)
 }

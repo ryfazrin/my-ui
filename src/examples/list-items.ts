@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderListExamples(container: HTMLElement) {
   const section = document.createElement('div')
   section.innerHTML = `
@@ -78,5 +80,24 @@ export function renderListExamples(container: HTMLElement) {
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = section.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<div class="list-item">
+  <div class="list-item__leading">
+    <i class="ph-bold ph-clock"></i>
+  </div>
+  <div class="list-item__content">
+    <div class="list-item__title">Screen Time</div>
+    <div class="list-item__subtitle">Daily average: 4h 12m</div>
+  </div>
+  <div class="list-item__trailing">
+    <i class="ph-bold ph-caret-right"></i>
+  </div>
+</div>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
 }

@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderSelectionControlExamples(container: HTMLElement) {
   const section = document.createElement('div')
   section.innerHTML = `
@@ -104,5 +106,27 @@ export function renderSelectionControlExamples(container: HTMLElement) {
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = section.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<label class="control-label">
+  <div class="checkbox">
+    <input type="checkbox" class="checkbox__input" checked>
+    <div class="checkbox"></div>
+  </div>
+  Selected Option
+</label>
+
+<label class="control-label">
+  <div class="radio">
+    <input type="radio" name="radio-demo" class="radio__input" checked>
+    <div class="radio"></div>
+  </div>
+  Selected Option
+</label>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
 }

@@ -15,17 +15,26 @@ export function renderComponentExamples(container: HTMLElement) {
   mainContainer.className = 'container'
   mainContainer.innerHTML = '<h1>OneUI 7 Components</h1>'
 
-  // Render
-  renderSwitchExamples(mainContainer)
-  renderInputExamples(mainContainer)
-  renderButtonExamples(mainContainer)
-  renderCardExamples(mainContainer)
-  renderListExamples(mainContainer)
-  renderNavigationExamples(mainContainer)
-  renderSliderExamples(mainContainer)
-  renderSelectionControlExamples(mainContainer)
-  renderDialogExamples(mainContainer)
-  renderMenuExamples(mainContainer)
+  // Create sections with IDs for sidebar navigation
+  const sections = [
+    { id: 'switches', render: renderSwitchExamples },
+    { id: 'inputs', render: renderInputExamples },
+    { id: 'buttons', render: renderButtonExamples },
+    { id: 'cards', render: renderCardExamples },
+    { id: 'lists', render: renderListExamples },
+    { id: 'navigation', render: renderNavigationExamples },
+    { id: 'sliders', render: renderSliderExamples },
+    { id: 'selection', render: renderSelectionControlExamples },
+    { id: 'dialogs', render: renderDialogExamples },
+    { id: 'menus', render: renderMenuExamples },
+  ]
+
+  sections.forEach(({ id, render }) => {
+    const sectionWrapper = document.createElement('div')
+    sectionWrapper.id = id
+    render(sectionWrapper)
+    mainContainer.appendChild(sectionWrapper)
+  })
 
   // Add to main container
   container.appendChild(mainContainer)

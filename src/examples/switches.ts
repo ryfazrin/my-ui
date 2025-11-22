@@ -1,6 +1,8 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderSwitchExamples(container: HTMLElement) {
-const section = document.createElement('div')
-section.innerHTML = `
+  const section = document.createElement('div')
+  section.innerHTML = `
     <section class="section">
       <h2>Switches</h2>
       <div class="switch-container">
@@ -107,5 +109,19 @@ section.innerHTML = `
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = section.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<label class="switch">
+  <input type="checkbox" class="switch__input" checked>
+  <span class="switch__track">
+    <span class="switch__thumb"></span>
+  </span>
+  <span class="switch__label">Checked Switch</span>
+</label>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
 }

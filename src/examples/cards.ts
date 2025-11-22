@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderCardExamples(container: HTMLElement) {
   const section = document.createElement('div')
   section.innerHTML = `
@@ -72,5 +74,23 @@ export function renderCardExamples(container: HTMLElement) {
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = section.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">Basic Card</h3>
+  </div>
+  <div class="card__body">
+    <p>Card content goes here.</p>
+  </div>
+  <div class="card__footer">
+    <button class="button button--primary">Action</button>
+  </div>
+</div>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
 }

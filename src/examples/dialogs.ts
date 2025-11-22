@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderDialogExamples(container: HTMLElement) {
   const section = document.createElement('div')
   section.innerHTML = `
@@ -67,6 +69,23 @@ export function renderDialogExamples(container: HTMLElement) {
 
     </section>
   `
+
+  // Add code collapse
+  const mainSection = section.querySelector('.section')
+  if (mainSection) {
+    const codeExample = `<div class="dialog">
+  <h3 class="dialog__title">Dialog Title</h3>
+  <p class="dialog__content">
+    This is the dialog content.
+  </p>
+  <div class="dialog__actions">
+    <button class="button">Cancel</button>
+    <button class="button">Apply</button>
+  </div>
+</div>`
+    mainSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
 
   // Event Listeners

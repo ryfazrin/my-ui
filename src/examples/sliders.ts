@@ -1,14 +1,12 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderSliderExamples(container: HTMLElement) {
   const section = document.createElement('div')
   section.innerHTML = `
     <section class="section">
-      <h2>Sliders & Range</h2>
-      
-      <div class="card">
-        <div class="card__header">
-          <h3 class="card__title">Display & Sound</h3>
-        </div>
-        <div class="card__body">
+      <h2>Sliders</h2>
+      <div class="card" style="padding: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
           
           <!-- Sliders Row -->
           <div style="display: flex; flex-direction: column; gap: 24px;">
@@ -66,12 +64,9 @@ export function renderSliderExamples(container: HTMLElement) {
 
     <section class="section dark-mode">
       <h2>Sliders (Dark Mode)</h2>
-      <div class="card">
-        <div class="card__header">
-          <h3 class="card__title">Display & Sound</h3>
-        </div>
-        <div class="card__body">
-
+      <div class="card" style="padding: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          
           <!-- Sliders Row -->
           <div style="display: flex; flex-direction: column; gap: 24px;">
             
@@ -126,21 +121,18 @@ export function renderSliderExamples(container: HTMLElement) {
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = section.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<div class="slider-container">
+  <div class="slider-icon">
+    <i class="ph-bold ph-speaker-high"></i>
+  </div>
+  <input type="range" class="slider slider--thick" min="0" max="100" value="75">
+</div>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(section)
-
-  // Add simple interaction for the thick slider demo
-  const thickSliders = section.querySelectorAll('.slider--thick');
-  thickSliders.forEach(slider => {
-    slider.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
-      const val = target.value;
-      // Determine background color based on mode (parent check or just generic logic)
-      // For simplicity in this demo, we use the same active color but different track opacity/color if needed.
-      // But since we are setting inline style, we can just use the same logic for now or detect dark mode parent.
-      const isDarkMode = target.closest('.dark-mode') !== null;
-      const trackColor = isDarkMode ? 'rgba(132, 132, 135, 0.3)' : 'rgba(153, 153, 157, 0.3)';
-
-      target.style.background = `linear-gradient(to right, #387AFF 0%, #387AFF ${val}%, ${trackColor} ${val}%, ${trackColor} 100%)`;
-    });
-  });
 }

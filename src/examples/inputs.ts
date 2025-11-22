@@ -1,3 +1,5 @@
+import { createCodeCollapse } from '../components/code-collapse'
+
 export function renderInputExamples(container: HTMLElement) {
   const inputSection = document.createElement('div')
   inputSection.innerHTML = `
@@ -101,5 +103,21 @@ export function renderInputExamples(container: HTMLElement) {
       </div>
     </section>
   `
+
+  // Add code collapse
+  const lightSection = inputSection.querySelector('.section:not(.dark-mode)')
+  if (lightSection) {
+    const codeExample = `<div class="form-group">
+  <label class="input-label">Search</label>
+  <div class="input-field input-field--dark">
+    <input type="text" class="input-field__input" placeholder="What are you looking for?">
+    <span class="input-field__icon">
+      <i class="ph-bold ph-magnifying-glass"></i>
+    </span>
+  </div>
+</div>`
+    lightSection.appendChild(createCodeCollapse('View Code', codeExample))
+  }
+
   container.appendChild(inputSection)
 }
