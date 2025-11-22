@@ -1,0 +1,130 @@
+@import "../_design-tokens.scss";
+
+// Slider Tokens
+$slider-height: 4px;
+$slider-thumb-size: 20px;
+$slider-track-color-light: rgba($secondary-light, 0.3);
+$slider-track-color-dark: rgba($secondary-dark, 0.3);
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.slider-icon {
+  color: $secondary-light;
+  width: 24px;
+  height: 24px;
+
+  &--active {
+    color: $accent-light;
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: $slider-height;
+  background: $slider-track-color-light;
+  border-radius: $slider-height / 2;
+  outline: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  position: relative;
+
+  // Range Progress (Visualized via JS usually, but basic CSS here)
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: $slider-height;
+    cursor: pointer;
+    background: transparent; // Handled by main background
+    border-radius: $slider-height / 2;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: $slider-thumb-size;
+    width: $slider-thumb-size;
+    border-radius: 50%;
+    background: $container-background-light;
+    cursor: pointer;
+    margin-top: ($slider-height - $slider-thumb-size) / 2;
+    box-shadow: $elevation-2;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: $elevation-3;
+    }
+
+    &:active {
+      transform: scale(1.2);
+      background: $container-background-light;
+    }
+  }
+
+  // Firefox
+  &::-moz-range-track {
+    width: 100%;
+    height: $slider-height;
+    cursor: pointer;
+    background: $slider-track-color-light;
+    border-radius: $slider-height / 2;
+  }
+
+  &::-moz-range-thumb {
+    height: $slider-thumb-size;
+    width: $slider-thumb-size;
+    border: none;
+    border-radius: 50%;
+    background: $container-background-light;
+    cursor: pointer;
+    box-shadow: $elevation-2;
+  }
+
+  // Thick Slider Variant (Volume/Brightness style)
+  &--thick {
+    height: 48px; // Thick bar
+    border-radius: 24px;
+    background: rgba($secondary-light, 0.15);
+    overflow: hidden; // To clip the fill
+
+    &::-webkit-slider-thumb {
+      opacity: 0; // Hide thumb for touch-drag feel
+      width: 0;
+      height: 0;
+    }
+
+    // We need a JS-driven fill element for this usually, 
+    // but for pure CSS input, we can't easily style the "fill" to the left of thumb in Webkit without JS updating a gradient.
+    // So we will use a linear-gradient background updated via inline style in the example.
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .slider-icon {
+    color: $secondary-dark;
+
+    &--active {
+      color: $accent-dark;
+    }
+  }
+
+  .slider {
+    background: $slider-track-color-dark;
+
+    &::-webkit-slider-thumb {
+      background: $container-background-dark;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &--thick {
+      background: rgba($secondary-dark, 0.2);
+    }
+  }
+}

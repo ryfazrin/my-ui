@@ -1,0 +1,204 @@
+@import "../_design-tokens.scss";
+
+// Header Tokens
+$header-height-expanded: 140px;
+$header-height-collapsed: 60px;
+$header-bg-light: $background-light;
+$header-bg-dark: $background-dark;
+
+.header {
+  position: relative;
+  background-color: $header-bg-light;
+  padding: 0 24px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+
+  // Simulating a sticky header behavior for demo
+  &--expanded {
+    height: $header-height-expanded;
+
+    .header__title {
+      font-size: 34px; // Samsung One UI Expanded Title Size
+      transform-origin: left bottom;
+      transform: scale(1);
+    }
+
+    .header__subtitle {
+      opacity: 1;
+      height: auto;
+      margin-top: 4px;
+    }
+  }
+
+  &--collapsed {
+    height: $header-height-collapsed;
+    justify-content: center;
+    border-bottom: 1px solid rgba($secondary-light, 0.2);
+
+    .header__title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .header__subtitle {
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+
+  &__top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  &__action {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $primary-light;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($secondary-light, 0.1);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $primary-light;
+    margin: 0;
+    transition: all 0.3s ease;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: $secondary-light;
+    transition: all 0.3s ease;
+  }
+}
+
+// Bottom Navigation Tokens
+$nav-height: 64px; // Slightly taller for modern feel
+$nav-bg-light: rgba($container-background-light, 0.9);
+$nav-bg-dark: rgba($container-background-dark, 0.9);
+
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: $nav-height;
+  background-color: $nav-bg-light;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba($secondary-light, 0.2);
+  position: relative; // Usually fixed bottom, but relative for demo
+  width: 100%;
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: $secondary-light;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 4px;
+
+    // Ripple effect could be added here
+
+    &--active {
+      color: $primary-light; // Samsung style often uses bold text/icon for active, not necessarily color
+
+      .bottom-nav__icon {
+        transform: translateY(-2px);
+      }
+
+      .bottom-nav__label {
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($secondary-light, 0.05);
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor; // Filled icons for active state usually
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    transition: font-weight 0.2s ease;
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .header {
+    background-color: $header-bg-dark;
+
+    &--collapsed {
+      border-color: rgba($secondary-dark, 0.2);
+    }
+
+    &__action {
+      color: $primary-dark;
+
+      &:hover {
+        background-color: rgba($secondary-dark, 0.2);
+      }
+    }
+
+    &__title {
+      color: $primary-dark;
+    }
+
+    &__subtitle {
+      color: $secondary-dark;
+    }
+  }
+
+  .bottom-nav {
+    background-color: $nav-bg-dark;
+    border-color: rgba($secondary-dark, 0.2);
+
+    &__item {
+      color: $secondary-dark;
+
+      &--active {
+        color: $primary-dark;
+      }
+
+      &:hover {
+        background-color: rgba($secondary-dark, 0.1);
+      }
+    }
+  }
+}

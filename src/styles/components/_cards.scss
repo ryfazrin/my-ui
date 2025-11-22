@@ -1,0 +1,98 @@
+@import "../_design-tokens.scss";
+
+// Card Tokens
+$card-border-radius: 24px;
+$card-padding: 24px;
+$card-bg-light: $container-background-light;
+$card-bg-dark: $container-background-dark;
+
+.card {
+  background-color: $card-bg-light;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  box-shadow: $elevation-1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+
+  // Hover effect (optional, good for interactive cards)
+  &--interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: $elevation-3;
+    cursor: pointer;
+  }
+
+  // Variants
+  &--flat {
+    box-shadow: none;
+    border: 1px solid rgba($secondary-light, 0.2);
+  }
+
+  &--glass {
+    background-color: rgba($card-bg-light, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  // Header/Body/Footer structure
+  &__header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: $heading-font-size;
+    font-weight: $heading-font-weight;
+    color: $primary-light;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: $body-font-size;
+    color: $secondary-light;
+    margin-top: 4px;
+  }
+
+  &__body {
+    color: $primary-light;
+  }
+
+  &__footer {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .card {
+    background-color: $card-bg-dark;
+    box-shadow: none; // One UI usually flat in dark mode or subtle shadow
+
+    &--flat {
+      border-color: rgba($secondary-dark, 0.2);
+    }
+
+    &--glass {
+      background-color: rgba($card-bg-dark, 0.6);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &__title {
+      color: $primary-dark;
+    }
+
+    &__subtitle {
+      color: $secondary-dark;
+    }
+
+    &__body {
+      color: $primary-dark;
+    }
+  }
+}

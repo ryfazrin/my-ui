@@ -7,6 +7,10 @@
 @import "./styles/components/_buttons.scss";
 @import "./styles/components/_inputs.scss";
 @import "./styles/components/_switch.scss";
+@import "./styles/components/_cards.scss";
+@import "./styles/components/_list-items.scss";
+@import "./styles/components/_navigation.scss";
+@import "./styles/components/_sliders.scss";
 
 // Breakpoint mixins
 $breakpoint-mobile: 320px;
@@ -70,7 +74,7 @@ body {
 .section {
   margin: 1rem 0;
   border-radius: 8px;
-  
+
   @include mobile {
     padding: 1rem;
   }
@@ -88,7 +92,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 1rem 0;
-  
+
   @include mobile {
     gap: 0.5rem;
   }
@@ -107,7 +111,7 @@ body {
   flex-direction: column;
   margin: 1rem 0;
   max-width: 600px;
-  
+
   @include mobile {
     gap: 0.75rem;
   }
@@ -125,7 +129,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
-  
+
   @include mobile {
     gap: 1.5rem;
   }

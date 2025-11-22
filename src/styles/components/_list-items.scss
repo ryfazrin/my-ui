@@ -1,0 +1,144 @@
+@import "../_design-tokens.scss";
+
+// List Item Tokens
+$list-item-height: 64px;
+$list-item-padding: 16px;
+$list-item-radius: 16px;
+$list-icon-size: 24px;
+$list-icon-bg-size: 40px;
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: transparent;
+
+  // If inside a card, remove padding/margin issues if any
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px $list-item-padding;
+  min-height: $list-item-height;
+  background-color: transparent;
+  border-radius: $list-item-radius;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background-color: rgba($secondary-light, 0.1);
+  }
+
+  &:active {
+    background-color: rgba($secondary-light, 0.2);
+  }
+
+  // Left Icon / Avatar
+  &__leading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $list-icon-bg-size;
+    height: $list-icon-bg-size;
+    border-radius: 12px; // Squircle
+    margin-right: 16px;
+    flex-shrink: 0;
+
+    // Default icon style
+    color: $accent-light;
+    background-color: rgba($accent-light, 0.1);
+
+    svg {
+      width: $list-icon-size;
+      height: $list-icon-size;
+    }
+  }
+
+  // Text Content
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: $primary-light;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: $secondary-light;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Right Action / Meta
+  &__trailing {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    color: $secondary-light;
+    font-size: 14px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // Separator variant
+  &--separator {
+    border-bottom: 1px solid rgba($secondary-light, 0.2);
+    border-radius: 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .list-item {
+    &:hover {
+      background-color: rgba($secondary-dark, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($secondary-dark, 0.3);
+    }
+
+    &__leading {
+      color: $accent-dark;
+      background-color: rgba($accent-dark, 0.15);
+    }
+
+    &__title {
+      color: $primary-dark;
+    }
+
+    &__subtitle {
+      color: $secondary-dark;
+    }
+
+    &__trailing {
+      color: $secondary-dark;
+    }
+
+    &--separator {
+      border-color: rgba($secondary-dark, 0.2);
+    }
+  }
+}
