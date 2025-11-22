@@ -16,9 +16,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 1 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-high"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="100" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 100%, rgba(153, 153, 157, 0.3) 100%, rgba(153, 153, 157, 0.3) 100%);">
@@ -27,10 +25,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 2 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                </svg>
+                <i class="ph-bold ph-speaker-high"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="75" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 75%, rgba(153, 153, 157, 0.3) 75%, rgba(153, 153, 157, 0.3) 100%);">
@@ -39,11 +34,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 3 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                </svg>
+                <i class="ph-bold ph-speaker-low"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="50" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 50%, rgba(153, 153, 157, 0.3) 50%, rgba(153, 153, 157, 0.3) 100%);">
@@ -52,9 +43,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 4 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-low"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="25" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 25%, rgba(153, 153, 157, 0.3) 25%, rgba(153, 153, 157, 0.3) 100%);">
@@ -63,9 +52,7 @@ export function renderSliderExamples(container: HTMLElement) {
              <!-- Slider 5 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-none"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="0" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 0%, rgba(153, 153, 157, 0.3) 0%, rgba(153, 153, 157, 0.3) 100%);">
@@ -91,9 +78,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 1 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-high"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="100" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 100%, rgba(132, 132, 135, 0.3) 100%, rgba(132, 132, 135, 0.3) 100%);">
@@ -102,10 +87,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 2 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                </svg>
+                <i class="ph-bold ph-speaker-high"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="75" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 75%, rgba(132, 132, 135, 0.3) 75%, rgba(132, 132, 135, 0.3) 100%);">
@@ -114,11 +96,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 3 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                </svg>
+                <i class="ph-bold ph-speaker-low"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="50" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 50%, rgba(132, 132, 135, 0.3) 50%, rgba(132, 132, 135, 0.3) 100%);">
@@ -127,9 +105,7 @@ export function renderSliderExamples(container: HTMLElement) {
             <!-- Slider 4 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-low"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="25" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 25%, rgba(132, 132, 135, 0.3) 25%, rgba(132, 132, 135, 0.3) 100%);">
@@ -138,9 +114,7 @@ export function renderSliderExamples(container: HTMLElement) {
              <!-- Slider 5 -->
             <div class="slider-container">
               <div class="slider-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                </svg>
+                <i class="ph-bold ph-speaker-none"></i>
               </div>
               <input type="range" class="slider slider--thick" min="0" max="100" value="0" 
                 style="background: linear-gradient(to right, #387AFF 0%, #387AFF 0%, rgba(132, 132, 135, 0.3) 0%, rgba(132, 132, 135, 0.3) 100%);">

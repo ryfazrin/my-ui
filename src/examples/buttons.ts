@@ -6,22 +6,22 @@ export function renderButtonExamples(container: HTMLElement) {
       <h2>Light Mode Buttons</h2>
       <div class="button-container">
         <button type="button" class="button button--dark">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Dark Button
         </button>
 
         <button type="button" class="button button--light">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Light Button
         </button>
 
         <button type="button" class="button button--primary">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Primary Button
         </button>
 
         <button type="button" class="button button--gradient">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Gradient Button
         </button>
       </div>
@@ -32,22 +32,22 @@ export function renderButtonExamples(container: HTMLElement) {
       <h2>Dark Mode Buttons</h2>
       <div class="button-container">
         <button type="button" class="button button--dark">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Dark Button
         </button>
 
         <button type="button" class="button button--light">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Light Button
         </button>
 
         <button type="button" class="button button--primary">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Primary Button
         </button>
 
         <button type="button" class="button button--gradient">
-          <span class="button-icon">⋮</span>
+          <span class="button-icon"><i class="ph-bold ph-star"></i></span>
           Gradient Button
         </button>
       </div>
