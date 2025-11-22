@@ -88,20 +88,34 @@ $slider-track-color-dark: rgba($secondary-dark, 0.3);
 
   // Thick Slider Variant (Volume/Brightness style)
   &--thick {
-    height: 48px; // Thick bar
-    border-radius: 24px;
+    height: 16px; // Thinner track as requested
+    border-radius: 8px;
     background: rgba($secondary-light, 0.15);
-    overflow: hidden; // To clip the fill
+    overflow: visible;
 
-    &::-webkit-slider-thumb {
-      opacity: 0; // Hide thumb for touch-drag feel
-      width: 0;
-      height: 0;
+    &::-webkit-slider-runnable-track {
+      height: 16px;
+      border-radius: 8px;
     }
 
-    // We need a JS-driven fill element for this usually, 
-    // but for pure CSS input, we can't easily style the "fill" to the left of thumb in Webkit without JS updating a gradient.
-    // So we will use a linear-gradient background updated via inline style in the example.
+    &::-webkit-slider-thumb {
+      opacity: 1;
+      width: 22px;
+      height: 22px;
+      margin-top: (16px - 22px) / 2; // -3px
+      background-color: #000;
+      border: 2px solid $accent-light;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Slight shadow for depth
+      transform: none;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
@@ -125,6 +139,11 @@ $slider-track-color-dark: rgba($secondary-dark, 0.3);
 
     &--thick {
       background: rgba($secondary-dark, 0.2);
+
+      &::-webkit-slider-thumb {
+        background-color: #000; // Always black thumb as per image
+        border-color: $accent-dark;
+      }
     }
   }
 }

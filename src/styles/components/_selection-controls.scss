@@ -1,0 +1,134 @@
+@import "../_design-tokens.scss";
+
+// Selection Control Tokens
+$control-size: 24px;
+$control-border-width: 1px;
+$control-checked-color: $accent-light;
+$control-unchecked-color: $secondary-light;
+
+// Base Control Styles
+.control-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: $primary-light;
+  user-select: none;
+  margin-bottom: 8px;
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Checkbox
+.checkbox {
+  position: relative;
+  width: $control-size;
+  height: $control-size;
+  border: $control-border-width solid $control-unchecked-color;
+  border-radius: 50%; // Circular
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.checkbox {
+      background-color: $control-checked-color;
+      border-color: $control-checked-color;
+
+      &::after {
+        content: '';
+        width: 10px;
+        height: 6px;
+        border: 2px solid white;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg) translate(1px, -1px);
+      }
+    }
+
+    &:disabled+.checkbox {
+      border-color: $secondary-light;
+      background-color: rgba($secondary-light, 0.1);
+    }
+  }
+}
+
+// Radio
+.radio {
+  position: relative;
+  width: $control-size;
+  height: $control-size;
+  border: $control-border-width solid $control-unchecked-color;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.radio {
+      border-color: $control-checked-color;
+      border-width: 2px; // Keep border width consistent
+
+      &::after {
+        content: '';
+        width: 14px; // Inner circle size
+        height: 14px;
+        background-color: $control-checked-color;
+        border-radius: 50%;
+      }
+    }
+
+    &:disabled+.radio {
+      border-color: $secondary-light;
+
+      &::after {
+        background-color: $secondary-light;
+      }
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .control-label {
+    color: $primary-dark;
+  }
+
+  .checkbox {
+    border-color: $secondary-dark;
+
+    &__input:checked+.checkbox {
+      background-color: $accent-dark;
+      border-color: $accent-dark;
+    }
+  }
+
+  .radio {
+    border-color: $secondary-dark;
+
+    &__input:checked+.radio {
+      border-color: $accent-dark;
+
+      &::after {
+        background-color: $accent-dark;
+      }
+    }
+  }
+}

@@ -30,6 +30,8 @@ $list-icon-bg-size: 40px;
 
   &:hover {
     background-color: rgba($secondary-light, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   &:active {
@@ -114,6 +116,8 @@ $list-icon-bg-size: 40px;
   .list-item {
     &:hover {
       background-color: rgba($secondary-dark, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     &:active {

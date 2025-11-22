@@ -7,7 +7,9 @@ $card-bg-light: $container-background-light;
 $card-bg-dark: $container-background-dark;
 
 .card {
-  background-color: $card-bg-light;
+  background-color: rgba($card-bg-light, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: $card-border-radius;
   padding: $card-padding;
   box-shadow: $elevation-1;
@@ -71,7 +73,7 @@ $card-bg-dark: $container-background-dark;
 // Dark Mode
 .dark-mode {
   .card {
-    background-color: $card-bg-dark;
+    background-color: rgba($card-bg-dark, 0.85);
     box-shadow: none; // One UI usually flat in dark mode or subtle shadow
 
     &--flat {

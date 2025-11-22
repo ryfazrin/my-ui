@@ -1,0 +1,264 @@
+@import "../_design-tokens.scss";
+
+// Menu Tokens
+$menu-radius: 32px;
+$menu-bg-light: rgba($container-background-light, 0.85);
+$menu-bg-dark: rgba($container-background-dark, 0.85);
+$menu-blur: 20px;
+
+.menu-panel {
+  background-color: $menu-bg-light;
+  backdrop-filter: blur($menu-blur);
+  -webkit-backdrop-filter: blur($menu-blur);
+  border-radius: $menu-radius;
+  padding: 24px;
+  box-shadow: $elevation-3;
+  width: 100%;
+  max-width: 380px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px; // For demo spacing
+
+  // Header (Internet Menu)
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    background-color: rgba($secondary-light, 0.05);
+    border-radius: 20px;
+    margin-bottom: 8px;
+
+    &-icon {
+      width: 48px;
+      height: 48px;
+      background-color: $background-light;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $elevation-1;
+      color: $primary-light;
+    }
+
+    &-content {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: $primary-light;
+      margin-bottom: 2px;
+    }
+
+    &-url {
+      font-size: 12px;
+      color: $secondary-light;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-action {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: $primary-light;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($secondary-light, 0.1);
+      }
+    }
+  }
+
+  // Horizontal Scroll Section
+  &__scroll-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin: 0 -8px;
+    padding: 0 8px 16px 8px;
+
+    // Hide scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  // Grid Section
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    &--2-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Circular Action Item
+  &__action-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: 64px;
+
+    &-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #F2F2F2; // Solid light grey
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-light;
+      transition: all 0.2s ease;
+      font-size: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); // Subtle shadow
+
+      &:hover {
+        background-color: #E6E6E6;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-label {
+      font-size: 12px;
+      color: $primary-light;
+      text-align: center;
+      line-height: 1.2;
+    }
+  }
+
+  // Pill Action Item (Pop-out menu)
+  &__action-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    background-color: rgba($secondary-light, 0.1);
+    border-radius: 24px;
+    color: $primary-light;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    &:hover {
+      background-color: rgba($secondary-light, 0.2);
+    }
+
+    &--large {
+      height: 56px;
+      justify-content: space-between;
+      padding: 0 24px;
+      background-color: rgba($secondary-light, 0.15);
+    }
+  }
+
+  // Pagination Dots
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+
+    &-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: rgba($secondary-light, 0.3);
+
+      &--active {
+        background-color: $primary-light;
+      }
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .menu-panel {
+    background-color: $menu-bg-dark;
+
+    &__header {
+      background-color: rgba($secondary-dark, 0.1);
+
+      &-icon {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $primary-dark;
+      }
+
+      &-title {
+        color: $primary-dark;
+      }
+
+      &-url {
+        color: $secondary-dark;
+      }
+
+      &-action {
+        color: $primary-dark;
+
+        &:hover {
+          background-color: rgba($secondary-dark, 0.2);
+        }
+      }
+    }
+
+    &__action-circle {
+      &-icon {
+        background-color: #3E3E3E; // Solid dark grey
+        color: $primary-dark;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); // Stronger shadow for dark mode
+
+        &:hover {
+          background-color: #4A4A4A;
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      &-label {
+        color: $primary-dark;
+      }
+    }
+
+    &__action-pill {
+      background-color: rgba($secondary-dark, 0.2);
+      color: $primary-dark;
+
+      &:hover {
+        background-color: rgba($secondary-dark, 0.3);
+      }
+
+      &--large {
+        background-color: rgba($secondary-dark, 0.25);
+      }
+    }
+
+    &__pagination-dot {
+      background-color: rgba($secondary-dark, 0.3);
+
+      &--active {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}

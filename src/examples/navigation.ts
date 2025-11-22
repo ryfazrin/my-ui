@@ -63,13 +63,26 @@ export function renderNavigationExamples(container: HTMLElement) {
       <!-- Collapsed Header Demo (Dark Mode) -->
       <div class="card dark-mode" style="padding: 0; overflow: hidden; height: 150px; position: relative; background-color: #000;">
         <div class="header header--collapsed">
-          <div class="header__top-bar">
-             <div class="header__action">
+           <div class="header__action">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </div>
+          
+          <div class="header__content-wrapper">
+            <h1 class="header__title">Title</h1>
+            <div class="header__subtitle">Subtitle</div>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <div class="header__action">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 18l-6-6 6-6"/>
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
             </div>
-            <h1 class="header__title">Details</h1>
             <div class="header__action">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="1"/>
